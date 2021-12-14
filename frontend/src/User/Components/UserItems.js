@@ -2,7 +2,7 @@ import React from "react";
 
 import './UserItems.js';
 
-import Avatar from "../../Shared/Components/UIElements/Avatar.js";
+import Avatar from "../../Shared/Components/UIElements/Avatar";
 
 import {Link} from 'react-router-dom';
 
@@ -14,6 +14,7 @@ const UserItems = props=>
        <Card className="user-item__content">
        <Link to={`/${props.id}/places`}>
        <div className="user-item__image">
+       <Avatar image={props.image} alt={props.name} />
        <img src={props.image} alt={props.name}/>
        </div>
        <div className="user-item__info">
