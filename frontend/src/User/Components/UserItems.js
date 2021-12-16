@@ -15,7 +15,6 @@ const UserItems = props=>
        <Link to={`/${props.id}/places`}>
        <div className="user-item__image">
        <Avatar image={props.image} alt={props.name} />
-       <img src={props.image} alt={props.name}/>
        </div>
        <div className="user-item__info">
         <h2>{props.name}</h2>
