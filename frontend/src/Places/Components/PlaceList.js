@@ -1,16 +1,17 @@
 import React from 'react';
 
-import Card from '../../Shared/Components/UIElements/Card';
+import Card from '../../shared/components/UIElements/Card';
 import PlaceItem from './PlaceItem';
-import './PlacesList.css';
+import './PlaceList.css';
+import Button from '../../shared/components/FormElements/Button'
 
-const PlacesList = props => {
+const PlaceList = props => {
   if (props.items.length === 0) {
     return (
       <div className="place-list center">
         <Card>
           <h2>No places found. Maybe create one?</h2>
-          <button>Share Place</button>
+          <Button to="/places/new">Share Place</Button>
         </Card>
       </div>
     );
@@ -34,4 +35,4 @@ const PlacesList = props => {
   );
 };
 
-export default PlacesList;
+export default PlaceList;

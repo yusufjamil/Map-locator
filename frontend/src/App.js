@@ -1,32 +1,40 @@
-import React from "react";
-import { BrowserRouter as Router,Route,Redirect,Switch } from "react-router-dom";
-import Users from "./User/Pages/Users";
-import NewPlaces from "./Places/Pages/NewPlaces";
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from 'react-router-dom';
 
-import MainNavigation from "./Shared/Components/Navigation/MainNavigation";
+import Users from './user/pages/Users';
+import NewPlace from './places/pages/NewPlace';
+import UserPlaces from './places/pages/UserPlaces';
+import UpdatePlace from './places/pages/UpdatePlace';
+import MainNavigation from './shared/components/Navigation/MainNavigation.js';
 
-import UserPlaces from "./Places/Pages/UserPlaces";
-
-const App= ()=>
-{
+const App = () => {
   return (
-  <Router>
-    <MainNavigation/>
-    <main>
-    <Switch>
-    <Route path="/" exact>
-     <Users/>
-    </Route>
-    <Route path="/:userId/places" exact>
-     <UserPlaces/>
-    </Route>
-    <Route path="/places/new" exact>
-      <NewPlaces/>
-    </Route>
-    <Redirect to="/"/>
-    </Switch>
-    </main>
-  </Router>
+    <Router>
+      <MainNavigation />
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <Users />
+          </Route>
+          <Route path="/:userId/places" exact>
+            <UserPlaces />
+          </Route>
+          <Route path="/places/new" exact>
+            <NewPlace />
+          </Route>
+          <Route path="/places/:placeId">
+            <UpdatePlace />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
+      </main>
+    </Router>
   );
 };
+
 export default App;
